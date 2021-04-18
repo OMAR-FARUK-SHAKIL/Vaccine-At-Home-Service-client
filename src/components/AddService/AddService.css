@@ -1,0 +1,10 @@
+#new-service{
+    
+   border: 2px solid pink;
+   border-radius:10px;
+   text-align:center;
+   background-color:lightgrey;
+   width: 600px;
+   padding:20px;
+   margin-left: 400px;
+}
