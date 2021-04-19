@@ -5,7 +5,7 @@ const AllServices = () => {
     const [services, setServices] = useState([]);
   
   useEffect(()=>{
-    fetch("http://localhost:5500/services")
+    fetch("https://shrouded-thicket-71402.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
    
@@ -14,7 +14,7 @@ const AllServices = () => {
 
     const deleteProduct = (id) => {
         console.log(id);
-       fetch(`http://localhost:5500/delete/${id}`, {
+       fetch(`https://shrouded-thicket-71402.herokuapp.com/delete/${id}`, {
          method: "DELETE",
        })
          .then((res) => res.json())

@@ -8,7 +8,7 @@ const OrderService = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [orders,setOrder] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5500/orders/${loggedInUser.email}`)
+        fetch(`https://shrouded-thicket-71402.herokuapp.com/orders/${loggedInUser.email}`)
           .then((res) => res.json())
           .then((data) => setOrder(data));
       }, [loggedInUser]);

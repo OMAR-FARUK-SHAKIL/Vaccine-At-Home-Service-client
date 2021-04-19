@@ -21,7 +21,7 @@ const ServiceDetail = ({ service }) => {
             charge: service.price,
             orderTime: new Date()
         };
-        fetch("http://localhost:5500/orderService", {
+        fetch("https://shrouded-thicket-71402.herokuapp.com/orderService", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(orderInfo)

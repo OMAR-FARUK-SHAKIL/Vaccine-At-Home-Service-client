@@ -17,7 +17,7 @@ const AddService = () => {
       description: data.description,
       imageURL: imageURl,
     };
-    fetch("http://localhost:5500/addService", {
+    fetch("https://shrouded-thicket-71402.herokuapp.com/addService", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product),

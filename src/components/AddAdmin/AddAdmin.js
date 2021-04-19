@@ -15,7 +15,7 @@ const AddAdmin = () => {
        
         console.log("info",info);
 
-        fetch('http://localhost:5500/addAdmin', {
+        fetch('https://shrouded-thicket-71402.herokuapp.com/addAdmin', {
             method: 'POST',
             
             headers: { "Content-Type": "application/json" },

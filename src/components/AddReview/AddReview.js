@@ -14,7 +14,7 @@ const AddReview = () => {
     const handleSubmit = () => {  
         console.log("info",reviewInfo);
 
-        fetch('http://localhost:5500/addReview', {
+        fetch('https://shrouded-thicket-71402.herokuapp.com/addReview', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(reviewInfo),
