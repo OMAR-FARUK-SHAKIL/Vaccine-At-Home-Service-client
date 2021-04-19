@@ -3,30 +3,21 @@ import Sidebar from '../Dashboard/Sidebar/Sidebar';
 
 const AddAdmin = () => {
     const [info, setInfo] = useState({});
-    // const [file, setFile] = useState(null);
+
     const handleBlur = e => {
         const newInfo = { ...info };
         newInfo[e.target.name] = e.target.value;
         setInfo(newInfo);
     }
 
-    // const handleFileChange = (e) => {
-    //     const newFile = e.target.files[0];
-    //     setFile(newFile);
-    // }
-
+   
     const handleSubmit = () => {
-        // const formData = new FormData()
+       
         console.log("info",info);
-        
-        // formData.append('file', file);
-        // formData.append('name', info.name);
-        // formData.append('email', info.email);
-        // console.log("formdata=",formData);
 
         fetch('http://localhost:5500/addAdmin', {
             method: 'POST',
-            // body: formData
+            
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(info),
         })
@@ -53,10 +44,7 @@ const AddAdmin = () => {
                         <label htmlFor="exampleInputPassword1">Name</label>
                         <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Name" />
                     </div>
-                    {/* <div className="form-group">
-                        <label htmlFor="exampleInputPassword1">Upload a image</label>
-                        <input onChange={handleFileChange} type="file" className="form-control" id="exampleInputPassword1" placeholder="Picture" />
-                    </div> */}
+                   
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>

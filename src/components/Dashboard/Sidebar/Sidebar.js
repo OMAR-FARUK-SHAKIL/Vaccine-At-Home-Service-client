@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog, faSignOutAlt, faCalendar, faHome, faGripHorizontal, faUserPlus, faUsers } from '@fortawesome/free-solid-svg-icons';
-import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
 import { UserContext } from '../../../App';
 
 const Sidebar = () => {
@@ -11,7 +10,7 @@ const Sidebar = () => {
     const [isDoctor, setIsDoctor] = useState(false);
 
     useEffect(() => {
-        fetch('https://salty-plateau-71286.herokuapp.com/isDoctor', {
+        fetch(' http://localhost:5500/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -33,22 +32,13 @@ const Sidebar = () => {
                         <FontAwesomeIcon icon={faHome} /> <span>Home</span>
                     </Link>
                 </li>
-                {isDoctor || <div>
-                    <li>
-                        <Link to="/allPatients" className="text-white">
-                            <FontAwesomeIcon icon={faCalendar} /> <span>Appointments</span>
+                <li>
+                        <Link to="/addReview" className="text-white">
+                            <FontAwesomeIcon icon={faCalendar} /> <span>Add Review</span>
                         </Link>
-                    </li>
-                    <li>
-                        <Link to="/patient" className="text-white">
-                            <FontAwesomeIcon icon={faUsers} /> <span>Patients</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/prescriptions" className="text-white">
-                            <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span>
-                        </Link>
-                    </li>
+                 </li>
+                {isDoctor && <div>
+                   
                     <li>
                         <Link to="/addAdmin" className="text-white" >
                             <FontAwesomeIcon icon={faUserPlus} /> <span>Add Admin</span>
@@ -59,10 +49,20 @@ const Sidebar = () => {
                             <FontAwesomeIcon icon={faCog} /> <span>Add new Service</span>
                         </Link>
                     </li>
+                    <li>
+                        <Link to="/allServices" className="text-white" >
+                            <FontAwesomeIcon icon={faCog} /> <span>All Services</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/allOrders" className="text-white" >
+                            <FontAwesomeIcon icon={faCog} /> <span>All Orders</span>
+                        </Link>
+                    </li>
                 </div>}
             </ul>
             <div>
-                <Link to="/" className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>
+                <Link to="/" className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>LogOut</span></Link>
             </div>
         </div>
     );

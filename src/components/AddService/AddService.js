@@ -1,41 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { useForm } from "react-hook-form";
 import "./AddService.css";
 const axios = require("axios");
 
 
 const AddService = () => {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit } = useForm();
   const [imageURl, setImageURL] = useState(null);
-
-//   const [products, setProducts] = useState([]);
-
-
-// const allGoods =()=>{
-// useEffect(()=>{
-//   fetch("http://localhost:4000/products")
-//     .then((res) => res.json())
-//     .then((data) => setProducts(data));
- 
-//   }, [])
-// / }
-// allGoods();
-
-
-//   const deleteProduct = (id) => {
-//      console.log(id);
-//     fetch(`http://localhost:4000/delete/${id}`, {
-//       method: "DELETE",
-//     })
-//       .then((res) => res.json())
-//       .then((result) => {
-//           alert('deleted successfully,Reload please!');
-//         console.log("deleted successfully!!");
-//      const remainProduct = products.filter(product=>product._id!==id);
-//      setProducts(remainProduct);
-//       });
-//   };
-
 
 
   const onSubmit = (data) => {
@@ -75,19 +46,6 @@ const AddService = () => {
   };
 
 
-
-
-//   const newProduct = () => {
-//     document.getElementById("new-product").style.display = "block";
-//     document.getElementById("manage-product").style.display = "none";
-//   };
-//   const manageProduct = () => {
-//     document.getElementById("new-product").style.display = "none";
-//     document.getElementById("manage-product").style.display = "block";
-//   };
-
-  
-
   return (
     <div>
      
@@ -115,20 +73,7 @@ const AddService = () => {
           
         </form>
       </div>
-
-      {/* <div id="manage-product">
-      {products.length === 0 && (
-            <h1>Loading...</h1>      
-         )} 
-         { products.map(item =>
-         <li>
-            <h3>name:{item.name} --price:{item.price} --quantity:{item.quantity}</h3>
-            <button onClick={()=>deleteProduct(item._id)}>Delete</button>
-            </li>
-            )}
-           
-         </div>  */}
-     
+    
     </div>
   );
 };

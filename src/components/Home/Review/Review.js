@@ -1,20 +1,15 @@
 import React from 'react';
 
 const Review = (props) => {
-    const {quote,name,from ,img} = props.review;
+    const {name,title,location,description} = props.review;
     return (
-        <div className="card shadow-sm">
-            <div className="card-body">
-                <p className="card-text text-center">{quote}</p>
-            </div>
-            <div className="card-footer d-flex  align-items-center">
-                <img className="mx-3" src={img} alt="" width="60"/>
-                <div>
-                    <h6 className="text-primary">{name}</h6>
-                    <p className="m-0">{from}</p>
-                </div>
-            </div>
-       </div>
+        <div className="card col-md-3 col-sm-6 col-xs-12 text-center border border-info ms-5 p-2">
+            <h4>{name}</h4>
+            <h5 className="mt-3 mb-3">From-{location}</h5>
+            <br/><br/>
+            <h3>{title}</h3>
+            <p className="text-secondary"> {description}</p>
+        </div>
     );
 };
 

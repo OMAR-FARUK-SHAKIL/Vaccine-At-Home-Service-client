@@ -1,23 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import baby from '../../../images/baby.JPG';
-import covid from '../../../images/covid.jpg';
-import women from '../../../images/women.jpg';
 import ServiceDetail from '../ServiceDetail/ServiceDetail';
 
-// const serviceData = [
-//     {
-//         name: 'Vaccine for baby at home',
-//         img: baby
-//     },
-//     {
-//         name: 'Vaccine for covid patient at home',
-//         img: covid
-//     },
-//     {
-//         name: 'Vaccine for pregnant women at home',
-//         img: women
-//     }
-// ]
 
 const Services = () => {
     const [serviceData,setServiceData] = useState([]);
@@ -30,7 +13,7 @@ const Services = () => {
     
 console.log(serviceData);
     return (
-        <section className="services-container mt-5">
+        <section style={{backgroundColor:'#E7F7FA'}} className="services-container mt-5 p-5">
             <div className="text-center">
                 <h5 style={{color: '#1CC7C1'}}>OUR SERVICES</h5>
                 <h2>Services We Provide</h2>
@@ -44,7 +27,7 @@ console.log(serviceData);
                     </div>
                     <h1>Loading...</h1>
                 </div>
-        )}
+             )}
                 {
                     serviceData.map(service => <ServiceDetail service={service} key={service.name}></ServiceDetail>)
                 }

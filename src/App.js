@@ -8,6 +8,9 @@ import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import AddAdmin from "./components/AddAdmin/AddAdmin";
 import AddReview from "./components/AddReview/AddReview";
 import AddService from "./components/AddService/AddService";
+import OrderService from "./components/OrderService/OrderService";
+import AllServices from "./components/Dashboard/AllServices/AllServices";
+import AllOrders from "./components/Dashboard/AllOrders/AllOrders";
 
 
 export const UserContext = createContext();
@@ -39,6 +42,18 @@ function App() {
 
       <Route path="/addAdmin">
             <AddAdmin></AddAdmin>
+      </Route>
+
+      <PrivateRoute path="/orderAService">
+            <OrderService></OrderService>
+      </PrivateRoute>
+
+      <Route path="/allServices">
+            <AllServices></AllServices>
+      </Route>
+
+      <Route path="/allOrders">
+            <AllOrders></AllOrders>
       </Route>
 
       <Route exact path="/">

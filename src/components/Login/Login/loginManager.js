@@ -28,8 +28,7 @@ export const handleGoogleSignIn = () => {
       console.log(err.message);
     })
   }
-
-  
+ 
 
   export const handleSignOut = () => {
     return firebase.auth().signOut()

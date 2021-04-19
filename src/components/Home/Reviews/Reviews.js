@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Reviews.css';
 import wilson from '../../../images/wilson.png';
 import ema from '../../../images/ema.png';
@@ -28,16 +28,30 @@ const testimonialData = [
 
 
 const Reviews = () => {
+    const [reviews,setReviews] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:5500/reviews")
+          .then((res) => res.json())
+          .then((data) => setReviews(data));
+      }, []);
+
     return (
-        <section className="testimonials my-5 py-5">
-           <div className="container">
+        <section className="testimonials my-5 py-5 bg-light bg-gradient">
+           <div className="container text-center">
                <div className="section-header">
                    <h5 className="text-primary text-uppercase">User Reviews</h5>
-                   <h1>What Our Patients <br/> Says </h1>
+                   <h1>What Our Patients <br/> Says </h1><hr/>
                </div>
-               <div className="row mt-5 text-center">
+               <div className="w-80 row mt-3 pt-5 text-center d-flex justify-content-center">
+                    {reviews.length === 0 && (     
+                        <div style={{textAlign: 'center'}} class="spinner-border text-info" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    )}
+
                     {
-                        testimonialData.map(review => <Review review={review} key={review.name}/>)
+                        reviews.map(review => <Review review={review} key={review.name}/>)
                     }
                 </div>
            </div>

@@ -40,27 +40,17 @@ const Login = () => {
   }
 
   return (
-    <div className="login-page container">
-      <div className="row align-items-center" style={{ height: "100vh" }}>
-        <div className="col-md-6 shadow p-5">
-          <div className="form-group">
-            <label htmlFor="">User Name</label>
-            <input type="text" className="form-control" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="">Password</label>
-            <input type="password" className="form-control" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="" className="text-danger">Forgot your password?</label>
-          </div>
+    <div className="login-page container ">
+      
+        <div className="w-50 mx-auto justify-content-center text-center mt-5">
+          <img style={{height:'300px'}}  src={LoginBg} alt=""/>
+          <h2>Vaccine At Home Service</h2>
+          <h5>Login Please...</h5>
           <div className="from-group mt-5">
-            <button className="btn btn-brand" onClick={handleGoogleSignIn}>Google Sign in</button>
+            <button className="btn btn-info" onClick={handleGoogleSignIn}>Login With Google</button>
           </div>
-        </div>
-        <div className="col-md-6 d-none d-md-block align-self-end">
-          <img className="img-fluid" src={LoginBg} alt="" />
-        </div>
+       
+       
       </div>
     </div>
   );
