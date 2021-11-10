@@ -1,7 +1,9 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Header.css';
-import img from '../../../images/top-banner.jpg';
+// import img from '../../../images/top-banner.jpg';
+import { Rotate, Roll } from "react-awesome-reveal";
+
 
 const Header = () => {
     return (
@@ -9,12 +11,17 @@ const Header = () => {
             <Navbar></Navbar>
             <div className="top-banner row mt-5 p-5">
                 <div className="col-md-6 col-sm-12">
-                    <h3 style={{color:'green',marginLeft:'15px'}}>Vaccine Ready for You</h3>
-                    <p>Lorem ipsum dolor sit amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut soluta distinctio vero fuga facere blanditiis quisquam, quidem consequuntur laborum velit aperiam modi porro ducimus veniam fugiat quia possimus fugit accusantium! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam accusantium itaque ex harum eveniet qui libero aperiam nisi quisquam nemo doloribus, doloremque earum, eligendi commodi corporis ipsam quas vel? Dolorum.</p>
-                    <button>More about us</button>
+                    <Rotate top left>
+                        <h3 style={{ color: 'green', marginLeft: '15px' }}>Vaccine Ready for You</h3>
+                        <p>Lorem ipsum dolor sit amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut soluta distinctio vero fuga facere blanditiis quisquam, quidem consequuntur laborum velit aperiam modi porro ducimus veniam fugiat quia possimus fugit accusantium! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam accusantium itaque ex harum eveniet qui libero aperiam nisi quisquam nemo doloribus, doloremque earum, eligendi commodi corporis ipsam quas vel? Dolorum.</p>
+                        <button>More about us</button>
+                    </Rotate>
                 </div>
                 <div className="col-md-6 col-sm-12">
-                    <img style={{width:'400px',marginLeft:'30px'}} src={img} alt=""/>
+                    <Roll left>
+                        <img style={{ width: '400px', marginLeft: '30px' }} src='https://pngtree.com/freepng/feel-free-after-vaccination_5900751.html' alt="" />
+                    </Roll>
+
                 </div>
             </div>
         </div>
