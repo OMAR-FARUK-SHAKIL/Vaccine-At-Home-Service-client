@@ -18,7 +18,7 @@ const Header = () => {
                     </Rotate>
                 </div>
                 <div className="col-md-6 col-sm-12">
-                    <Roll >
+                    <Roll>
                         <img style={{ height: '500px',width: '500px', marginLeft: '30px' }} src={img} alt="" />
                     </Roll>
 

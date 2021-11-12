@@ -10,7 +10,6 @@ import ScrollTop from '../../Shared/ScrollTop/ScrollTop';
 const Home = () => {
     return (
         <div>
-            {/* <h1>Hello world! I'm start assignment 11.YAY</h1> */}
             <Header></Header>
             <Services></Services>
             <Blogs></Blogs>
