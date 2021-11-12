@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Header.css';
-// import img from '../../../images/top-banner.jpg';
+import img from '../../../images/feel free after vaccination.png';
 import { Rotate, Roll } from "react-awesome-reveal";
 
 
@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div id='header'>
             <Navbar></Navbar>
-            <div className="top-banner row mt-5 p-5">
+            <div className="row mt-5 px-5">
                 <div className="col-md-6 col-sm-12">
                     <Rotate top left>
                         <h3 style={{ color: 'green', marginLeft: '15px' }}>Vaccine Ready for You</h3>
@@ -18,8 +18,8 @@ const Header = () => {
                     </Rotate>
                 </div>
                 <div className="col-md-6 col-sm-12">
-                    <Roll left>
-                        <img style={{ width: '400px', marginLeft: '30px' }} src='https://pngtree.com/freepng/feel-free-after-vaccination_5900751.html' alt="" />
+                    <Roll >
+                        <img style={{ height: '500px',width: '500px', marginLeft: '30px' }} src={img} alt="" />
                     </Roll>
 
                 </div>
